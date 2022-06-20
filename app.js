@@ -16,6 +16,12 @@ app.use('/loguin', rotaLoguin);
 app.use('/orgao', rotaOrgao);
 
 
+app.get('/', (req, res) => {
+  res.status(200).json({
+    success: true
+  })
+})
+
 app.use((req, res, next) => {
     const erro = new Error('URL Não encontrado');
     erro.status = 404;
